@@ -2,69 +2,108 @@
 
 ## Project Overview
 
-This project demonstrates secure static website hosting using Amazon S3 and Amazon CloudFront.
+This project demonstrates how to deploy a secure and globally distributed static website using AWS cloud services.
 
-The architecture follows AWS security best practices by keeping the S3 bucket private while allowing CloudFront secure access.
+The website is hosted privately in Amazon S3 and delivered securely worldwide using Amazon CloudFront.
 
 ## Architecture
 
-```
-User
- ↓ HTTPS
-CloudFront CDN
- ↓
-Private Amazon S3 Bucket
-(index.html + style.css)
-```
+![Architecture Diagram](architecture/architecture-diagram.png)
 
-## AWS Services Used
+Architecture Flow:
+
+User → CloudFront CDN → Private S3 Bucket
+
+Services used:
 
 - Amazon S3
 - Amazon CloudFront
-- IAM Security Principles
+- HTTPS
+- Origin Access Control (OAC)
+- Static Website Hosting
 
-## Features
+---
 
-- Secure HTTPS delivery
-- Global CDN distribution
-- Private S3 bucket architecture
-- Static website hosting
-- Low-cost cloud deployment
-- AWS security-first design
+## AWS Services Used
 
-## Project Implementation Steps
+### Amazon S3
+- Private bucket storage
+- Static website assets hosting
+- Secure object management
 
-1. Created Amazon S3 bucket
-2. Uploaded website files
+### Amazon CloudFront
+- Global CDN delivery
+- HTTPS support
+- Edge caching
+- Low latency distribution
+
+### Security
+
+- S3 bucket kept private
+- CloudFront granted secure bucket access
+- HTTPS enforced
+- AWS security best practices followed
+
+---
+
+## Deployment Steps
+
+1. Created private S3 bucket
+2. Uploaded HTML and CSS files
 3. Configured CloudFront distribution
-4. Enabled secure private S3 access
-5. Implemented HTTPS delivery
-6. Deployed globally
+4. Enabled Origin Access Control
+5. Restricted direct bucket access
+6. Deployed globally through CloudFront
+
+---
 
 ## Screenshots
 
-### Live Website
+### S3 Bucket
 
-Add screenshot here
+![S3 Bucket](screenshots/s3-bucket.jpeg)
 
 ### CloudFront Distribution
 
-Add screenshot here
+![CloudFront Distribution](screenshots/cloudfront-distribution.jpeg)
 
-### S3 Bucket
+### Live Website
 
-Add screenshot here
+![Website](screenshots/website-live1.jpeg)
+
+![Website](screenshots/website-live2.jpeg)
+
+---
+
+## Repository Structure
+
+```
+
+aws-static-website-cloudfront/
+│
+├── architecture/
+│ └── architecture-diagram.png
+│
+├── screenshots/
+│ ├── s3-bucket.jpeg
+│ ├── cloudfront-distribution.jpeg
+│ ├── website-live1.jpeg
+│ └── website-live2.jpeg
+│
+├── index.html
+├── style.css
+└── README.md
+
+```
+
+---
 
 ## Skills Demonstrated
 
-AWS • S3 • CloudFront • CDN • IAM • HTTPS • Cloud Security • Static Website Hosting
+AWS S3 • CloudFront • CDN • Static Website Hosting • HTTPS • Origin Access Control • Cloud Security • IAM Concepts • AWS Architecture
 
-## Cost Optimization
+---
 
-Built using AWS Free Tier eligible services with cost-aware architecture.
+## Outcome
 
-## Author
-
-Shubh Palsetkar
-
-AWS Certified Solutions Architect Associate
+Successfully built and deployed a production-style AWS static website architecture with secure access controls and global content delivery.
